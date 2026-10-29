@@ -1,0 +1,50 @@
+{
+  "name": "alenTool",
+  "displayName": "alenTool",
+  "description": "一个日常运维中常用的工具",
+  "version": "0.0.1",
+  "publisher": "alen",
+  "engines": {
+    "vscode": "^1.144.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "alenTool.SqlTool.convertToIntInQueryParams",
+        "title": "Convert to Int in Query Params",
+        "category": "Alen SQL Tool"
+      },{
+        "command": "alenTool.SqlTool.convertToVarcharQueryParams",
+        "title": "Convert to Varchar in Query Params",
+        "category": "Alen SQL Tool"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.144.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "typescript-eslint": "^8.61.1",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  }
+}
